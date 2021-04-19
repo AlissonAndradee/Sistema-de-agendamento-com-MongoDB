@@ -35,8 +35,8 @@ app.post("/create", async(req,res) => {
 })
 
 app.get("/getcalendar", async(req,res) => {
-    var appointment = await appointmentService.GetAll(false);
-    res.json(appointment);
+    var appointments = await appointmentService.GetAll(false);
+    res.json(appointments);
 })
 app.listen(8080,() => {
     console.log("Rodando Servidor Agendamento")
