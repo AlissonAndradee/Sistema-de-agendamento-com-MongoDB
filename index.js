@@ -23,17 +23,13 @@ app.get("/cadastro", (req, res) => {
 })
 
 app.post("/create", async(req,res) => {
-    var status = await appointmentService.Create(
-        req.body.name,
-        req.body.email,
-        req.body.cpf,
-        req.body.description,
-        req.body.date,
-        req.body.time,
-    )
+    let { name,email,description,cpf,date,time } = req.body;
+    
+    var status = await appointmentService.Create(name,email,description,cpf,date,time)
     if(status){
         res.redirect("/");
     } else {
+        res.status(404)
         res.send("Ocorreu uma falha!")        
     }
 })

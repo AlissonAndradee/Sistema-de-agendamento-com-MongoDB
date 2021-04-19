@@ -5,7 +5,7 @@ const Appo = mongoose.model("Appointment",appointment);
 
 class AppointmentService {
 
-    async Create(name,email,description,date,cpf,time){
+    async Create(name,email,description,cpf,date,time){
          var newAppo = new Appo({
             name,
             email,
